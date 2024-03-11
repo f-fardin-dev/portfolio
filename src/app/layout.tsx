@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ReactNode } from "react";
+
+import { Navbar } from "@app/components/Navbar";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -17,7 +19,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="w-screen h-screen bg-gradient-to-b from-blue-100 to-red-100">
+          <nav className="h-20">
+            <Navbar />
+          </nav>
+          <main className="h[calc(100vh - 5rem)]">{children}</main>
+        </div>
+      </body>
     </html>
   );
 }
