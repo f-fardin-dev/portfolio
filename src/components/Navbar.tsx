@@ -25,7 +25,7 @@ export const Navbar = () => {
 
   const handleMenuClick = () => setOpen((prev) => !prev);
   return (
-    <div className="h-full flex items-center justify-start px-4 gap-4 sm:px-8 lg:px-16 xl:px-20">
+    <div className="h-full flex items-center justify-start gap-4">
       {/* Logo */}
       <div className="md:hidden lg:flex">
         <Link
