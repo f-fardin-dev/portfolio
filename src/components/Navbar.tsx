@@ -1,11 +1,9 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { NavLink } from "./NavLink";
+import { NavMobile } from "./NavMobile";
 
-const links = [
+export const links = [
   { url: "/", title: "Home" },
   { url: "/about", title: "About" },
   { url: "/portfolio", title: "Portfolio" },
@@ -21,9 +19,6 @@ const socials = [
 ];
 
 export const Navbar = () => {
-  const [open, setOpen] = useState(false);
-
-  const handleMenuClick = () => setOpen((prev) => !prev);
   return (
     <div className="h-full flex items-center justify-start gap-4">
       {/* Logo */}
@@ -52,26 +47,8 @@ export const Navbar = () => {
           </Link>
         ))}
       </div>
-      {/* Menu Button */}
-      <div className="md:hidden ms-auto">
-        <button
-          className="w-8 h-6 flex flex-col justify-between z-10 relative"
-          onClick={handleMenuClick}
-        >
-          <div className="w-8 h-[3px] rounded bg-black"></div>
-          <div className="w-8 h-[3px] rounded bg-black"></div>
-          <div className="w-8 h-[3px] rounded bg-black"></div>
-        </button>
-        {open && (
-          <div className="absolute inset-0 w-screen h-screen bg-black text-white flex flex-col items-center justify-center gap-6 text-xl">
-            {links.map((linkItem) => (
-              <Link href={linkItem.url} key={linkItem.url}>
-                {linkItem.title}
-              </Link>
-            ))}
-          </div>
-        )}
-      </div>
+      {/* Small Screen Navigation */}
+      <NavMobile />
     </div>
   );
 };
