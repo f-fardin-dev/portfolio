@@ -11,7 +11,7 @@ export const TransitionProvider = ({ children }: { children: ReactNode }) => {
     <AnimatePresence mode="wait" initial={false}>
       <div
         key={path}
-        className="w-screen h-screen bg-gradient-to-b from-blue-100 to-red-100 px-4 sm:px-8 lg:px-16 xl:px-20"
+        className="w-screen h-screen bg-gradient-to-b from-blue-100 to-red-100"
       >
         <motion.div
           className="fixed h-screen bg-black rounded-b-[100px] z-40 inset-x-0"
@@ -32,7 +32,7 @@ export const TransitionProvider = ({ children }: { children: ReactNode }) => {
           initial={{ height: "130vh" }}
           animate={{ height: "0vh", transition: { delay: 0.5, duration: 0.5 } }}
         />
-        <nav className="h-20">
+        <nav className="h-20 px-4 sm:px-8 lg:px-16 xl:px-20">
           <Navbar />
         </nav>
         <main className="h-[calc(100vh-5rem)]">{children}</main>

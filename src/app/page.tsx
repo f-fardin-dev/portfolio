@@ -11,7 +11,7 @@ export default function Home() {
       animate={{ y: "0%" }}
       transition={{ duration: 1 }}
     >
-      <div className="h-full flex flex-col lg:flex-row">
+      <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 lg:px-16 xl:px-20">
         {/* hero image */}
         <div className="h-1/2 lg:h-4/5 lg:w-1/2 relative">
           <Image
